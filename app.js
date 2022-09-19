@@ -57,4 +57,4 @@ const searchOption = () => {
 
 }
 
-getData('b');
+getData('ba');
