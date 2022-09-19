@@ -6,11 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Countries With Flag</title>
+    <!-- fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Galada&family=Hind+Siliguri&family=Noto+Serif+Bengali&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>All The Countries Names And Capitals</h1>
+
+    <h1>সকল দেশের নাম এবং তথ্য</h1>
+    <div class="search-area">
+        <input type="text" id="search-field" placeholder="Country Name">
+        <button id="search-btn" onclick="searchOption()">Search</button>
+    </div>
     <hr>
     <div id="country-container" class="grid">
 
