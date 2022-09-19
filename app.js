@@ -1,5 +1,8 @@
-
+// get elements 
 const noData = document.getElementById('no-result')
+const searchField = document.getElementById('search-field')
+
+// get data 
 const getData = async (searchText) => {
     const res = await fetch(`https://restcountries.com/v3.1/name/${searchText}`)
     console.log(res)
@@ -7,12 +10,14 @@ const getData = async (searchText) => {
         noData.classList.remove('hidden')
         return;
     }
+    else {
+        noData.classList.add('hidden')
+    }
     const data = await (res.json())
     displayData(data);
 }
-
+// displayData 
 const displayData = (countries) => {
-
     countries.map(country => {
         console.log(countries.length)
 
@@ -31,10 +36,21 @@ const displayData = (countries) => {
         document.getElementById('country-container').appendChild(newDiv)
     })
 }
+// enter funcionality
+searchField.addEventListener("keyup", function (event) {
+    // If the user presses the "Enter" key on the keyboard
+    if (event.key === "Enter") {
+        // Cancel the default action, if needed
+        event.preventDefault();
+        // Trigger the button element with a click
+        document.getElementById("search-btn").click();
+    }
+});
+
+
 
 const searchOption = () => {
     document.getElementById('country-container').innerText = "";
-    const searchField = document.getElementById('search-field')
     const searchText = searchField.value;
     searchField.value = "";
     getData(searchText);
