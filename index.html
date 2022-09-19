@@ -17,15 +17,23 @@
 
 <body>
 
-    <h1>সকল দেশের নাম এবং তথ্য</h1>
-    <div class="search-area">
-        <input type="text" id="search-field" placeholder="Country Name">
-        <button id="search-btn" onclick="searchOption()">Search</button>
-    </div>
-    <hr>
-    <div id="country-container" class="grid">
+    <header>
+        <h1>সকল দেশের নাম এবং তথ্য</h1>
+        <div class="search-area">
+            <input type="text" id="search-field" placeholder="Country Name">
+            <button id="search-btn" onclick="searchOption()">Search</button>
+        </div>
+        <hr>
+    </header>
+    <main>
+        <div id="no-result" class="hidden">
+            <h1>কোন তথ্য খুজে পাওয়া যায়নি, বানান টা আবার চেক করুন</h1>
+        </div>
+        <div id="country-container" class="grid">
 
-    </div>
+        </div>
+
+    </main>
 
 
     <script src="app.js"></script>

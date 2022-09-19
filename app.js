@@ -1,12 +1,21 @@
+
+const noData = document.getElementById('no-result')
 const getData = async (searchText) => {
     const res = await fetch(`https://restcountries.com/v3.1/name/${searchText}`)
+    console.log(res)
+    if (res.status === 404) {
+        noData.classList.remove('hidden')
+        return;
+    }
     const data = await (res.json())
     displayData(data);
 }
 
 const displayData = (countries) => {
-    console.log(countries)
+
     countries.map(country => {
+        console.log(countries.length)
+
         const { name, flags, capital, timezones, population, continents } = country
         const newDiv = document.createElement('div')
         newDiv.classList.add('single-items')

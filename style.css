@@ -43,6 +43,10 @@ button {
     padding: 10px 10px;
 }
 
+.hidden {
+    display: none;
+}
+
 @media only screen and (max-width: 480px) and (min-width: 320px) {
     .grid {
         grid-template-columns: repeat(1, 1fr);
